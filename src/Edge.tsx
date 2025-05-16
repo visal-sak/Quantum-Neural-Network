@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { EdgeProps } from "./models/edgeProps";
 
 const Edge: React.FC<EdgeProps> = ({ startX, startY, endX, endY, animationKey }) => {
-    const [length, setLength] = useState<number>(0);
-
     useEffect(() => {
-        setLength(0);
-        const timer = setTimeout(() => setLength(1), 50);
+        const timer = setTimeout(() => {}, 50); // dummy animation delay
         return () => clearTimeout(timer);
     }, [animationKey]);
 
